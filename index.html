@@ -8,13 +8,17 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/b6b2d85b65.js" crossorigin="anonymous"></script>
     <!-- text font -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <!-- style  -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="container">
 
 
         <header>
@@ -24,20 +28,28 @@
             </nav>
         </header>
 
-        <h1 class="center">Your favorite recipe</h1>
+        <h1 class="center">Your favorite recipes</h1>
 
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus error iure numquam magni recusandae nemo
-            eius, sapiente, suscipit vel consequuntur saepe provident! Ut facilis ea harum, consequuntur adipisci
-            accusantium quis.
+        <p class="center">
+            Here you can link all your favorite recipes or recipes you want to try in the future.
         </p>
-
-        <form action="">
-            <input type="text" name="" id="">
-            <input type="text" name="" id="">
-            <button type="submit">Submit</button>
-        </form>
-
+        <p class="center">
+            Select a category, paste the URL and click submit.
+        </p>
+        <div class="form-container">
+            <form action="">
+                <select name="category" id="category">
+                    <option value="select">Select a category</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="snack">Snack</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+                <input type="text" name="food-input" id="food-input" placeholder="Paste URL">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 
     <footer>

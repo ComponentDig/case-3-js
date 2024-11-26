@@ -5,16 +5,23 @@
 }
 
 body {
-background-image: url('/../images/background-js-application.jpg'); 
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+    background-image: url('/../images/background-js-application.jpg');
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    /* Font */
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-div.wrapper {
+div.container {
     display: flex;
     flex-direction: column;
     flex: 1;
+    position: relative;
 }
 
 header {
@@ -24,11 +31,27 @@ header {
 
 footer {
     background-color: #F5ECE1;
-    height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
 }
 
-h1.center {
+h1.center,
+p.center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+p {
+    padding: 20px;
+    
+}
+
+
+div.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
