@@ -5,11 +5,13 @@
 }
 
 body {
+    /* Background image */
     background-image: url('/../images/background-js-application.jpg');
     height: 100%;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+
     /* Font */
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
@@ -29,6 +31,19 @@ header {
     padding: 50px;
 }
 
+div.box {
+    /* Glassmorphism around p tags */
+    width: 50%;
+    margin: 100px auto;
+    border: 1px solid white;
+    border-radius: 2rem;
+    background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+    );
+}
+
 footer {
     background-color: #F5ECE1;
     position: absolute;
@@ -45,8 +60,8 @@ p.center {
 }
 
 p {
-    padding: 20px;
-    
+    line-height: 3rem;
+    letter-spacing: 1px;
 }
 
 
