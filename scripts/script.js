@@ -16,9 +16,36 @@ function renderLinks() {
         categoryDiv.appendChild(categoryHeader);
 
 
+       
+        // List with links
+        const ul = document.createElement("ul");
+        links[category].forEach((link) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = link;
+            a.textContent = link;
+            a.target = "_blank";
+            li.appendChild(a);
+            ul.appendChild(li);
         });
 
-
+        categoryDiv.appendChild(ul);
+        linkCollection.appendChild(categoryDiv);
     }
 }
 
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const url = document.getElementById("linkURL").value;
+    const category = document.getElementById("category").value;
+
+    if (!links[category]) {
+        links[category] = [];
+    }
+
+    links[category].push(url);
+
+    form.reset();
+    renderLinks();
+});
