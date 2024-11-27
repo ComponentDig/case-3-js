@@ -39,19 +39,22 @@
             </p>
         </div>
         <div class="form-container">
-            <form action="">
-                <select name="category" id="category">
-                    <option value="select">Select a category</option>
+            <form action="" id="linkForm">
+                <select name="category" id="category" required>
+                    <option value="">Select a category</option>
                     <option value="breakfast">Breakfast</option>
                     <option value="lunch">Lunch</option>
                     <option value="snack">Snack</option>
                     <option value="dinner">Dinner</option>
                     <option value="dessert">Dessert</option>
                 </select>
-                <input type="text" name="food-input" id="food-input" placeholder="Paste URL">
+                <input type="text" name="linkURL" id="linkURL" placeholder="Paste URL" required>
                 <button type="submit">Submit</button>
             </form>
         </div>
+        
+        <div id="linkCollection"></div>
+
     </div>
 
     <footer>
@@ -59,7 +62,7 @@
     </footer>
 
     <!-- js script -->
-
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
