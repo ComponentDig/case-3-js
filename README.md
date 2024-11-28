@@ -1,6 +1,18 @@
 
+Större icon i header
+text i header
 
-1 glassmorphius on text? header? footer?
-2 icon bigger
-3 change font and font size
+text i footer
+
+större font i p?
+
+fixa till h1
+
+
+styla inputfält samt knapp
+
+
+
+
+
 

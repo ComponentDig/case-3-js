@@ -35,16 +35,16 @@ function renderLinks() {
 }
 
 form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent standard behavior
 
     const url = document.getElementById("linkURL").value;
-    const category = document.getElementById("category").value;
+    const category = document.getElementById("categorySelect").value;
 
     if (!links[category]) {
-        links[category] = [];
+        links[category] = []; // Create a category 
     }
 
-    links[category].push(url);
+    links[category].push(url); // Add link in correct category
 
     form.reset();
     renderLinks();
