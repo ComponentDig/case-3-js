@@ -1,6 +1,7 @@
 const form = document.getElementById("linkForm");
 const linkCollection = document.getElementById("linkCollection");
 
+
 const links = {};
 
 // Function for rendering links
@@ -16,7 +17,7 @@ function renderLinks() {
         categoryDiv.appendChild(categoryHeader);
 
 
-       
+
         // List with links
         const ul = document.createElement("ul");
         links[category].forEach((link) => {
@@ -26,7 +27,14 @@ function renderLinks() {
             a.textContent = link;
             a.target = "_blank";
             li.appendChild(a);
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Ta bort";
+            li.appendChild(removeButton);
             ul.appendChild(li);
+
+            removeButton.addEventListener("click", () => {
+                removeLink(category, link);
+            });
         });
 
         categoryDiv.appendChild(ul);
@@ -49,3 +57,4 @@ form.addEventListener("submit", (event) => {
     form.reset();
     renderLinks();
 });
+

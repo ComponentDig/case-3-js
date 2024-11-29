@@ -45,6 +45,10 @@ footer {
     height: 4rem;
 }
 
+h1 {
+    margin-top: 4rem;
+}
+
 h1.center,
 p.center {
     display: flex;
@@ -53,6 +57,7 @@ p.center {
 }
 
 p {
+    font-size: 1.2rem;
     line-height: 3rem;
     letter-spacing: 1px;
 }
