@@ -27,14 +27,16 @@ function renderLinks() {
             a.textContent = link;
             a.target = "_blank";
             li.appendChild(a);
-            const removeButton = document.createElement("button");
-            removeButton.textContent = "Ta bort";
-            li.appendChild(removeButton);
-            ul.appendChild(li);
+            const removeButton = document.createElement("i");
+            removeButton.className = "fa-solid fa-xmark"; 
+
 
             removeButton.addEventListener("click", () => {
                 removeLink(category, link);
             });
+
+            li.appendChild(removeButton);
+            ul.appendChild(li);
         });
 
         categoryDiv.appendChild(ul);
@@ -57,4 +59,14 @@ form.addEventListener("submit", (event) => {
     form.reset();
     renderLinks();
 });
+
+function removeLink(category, link) {
+    links[category] = links[category].filter((storedLink) => storedLink !== link);
+
+    if (links[category].length === 0) {
+        delete links[category];
+    }
+
+    renderLinks();
+}
 

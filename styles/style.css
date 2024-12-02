@@ -95,3 +95,16 @@ div.category {
     rgba(255, 255, 255, 0.3)
     );
 }
+
+/* Remove Icon style */
+i {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+i:hover {
+    color: darkred;
+    text-decoration: underline;
+}
