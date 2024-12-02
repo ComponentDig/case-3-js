@@ -96,6 +96,10 @@ div.category {
     );
 }
 
+i.header-icon {
+    color: black;
+}
+
 /* Remove Icon style */
 i {
     color: red;

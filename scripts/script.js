@@ -3,10 +3,13 @@ const linkCollection = document.getElementById("linkCollection");
 
 
 const links = {};
+const bookmarkedLinks = new Set();
+
 
 // Function for rendering links
 function renderLinks() {
     linkCollection.innerHTML = "";
+
     for (const category in links) {
         const categoryDiv = document.createElement("div");
         categoryDiv.className = "category";
@@ -20,15 +23,34 @@ function renderLinks() {
 
         // List with links
         const ul = document.createElement("ul");
+
         links[category].forEach((link) => {
             const li = document.createElement("li");
+
             const a = document.createElement("a");
             a.href = link;
             a.textContent = link;
             a.target = "_blank";
             li.appendChild(a);
+
+
+            const bookmarkButton = document.createElement("i");
+
+            if (bookmarkedLinks.has(link)) {
+                bookmarkButton.className = "fa-solid fa-star";
+            } else {
+                bookmarkButton.className = "fa-regular fa-star";
+            }
+
+            bookmarkButton.addEventListener("click", () => {
+                toggleBookmark(link, bookmarkButton);
+            });
+
+            li.appendChild(bookmarkButton);
+
+
             const removeButton = document.createElement("i");
-            removeButton.className = "fa-solid fa-xmark"; 
+            removeButton.className = "fa-solid fa-xmark";
 
 
             removeButton.addEventListener("click", () => {
@@ -60,11 +82,26 @@ form.addEventListener("submit", (event) => {
     renderLinks();
 });
 
+// Function for removing links
 function removeLink(category, link) {
     links[category] = links[category].filter((storedLink) => storedLink !== link);
 
+    // Deletes category if all links are removed
     if (links[category].length === 0) {
         delete links[category];
+    }
+
+    renderLinks();
+}
+
+// Function for bookmark a link
+function toggleBookmark(link, bookmarkButton) {
+    if (bookmarkedLinks.has(link)) {
+        bookmarkedLinks.delete(link);
+        bookmarkButton.className = "fa-regular fa-star";
+    } else {
+        bookmarkedLinks.add(link);
+        bookmarkButton.className = "fa-solid fa-star";
     }
 
     renderLinks();
