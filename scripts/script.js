@@ -72,6 +72,11 @@ form.addEventListener("submit", (event) => {
     const url = document.getElementById("linkURL").value;
     const category = document.getElementById("categorySelect").value;
 
+    if (!isUrlValid(url)) {
+        errorMessage("Ange en giltig URL.");
+        return;
+    }
+
     if (!links[category]) {
         links[category] = []; // Create a category 
     }
@@ -107,3 +112,29 @@ function toggleBookmark(link, bookmarkButton) {
     renderLinks();
 }
 
+// Function showing message when not putting in a valid URL
+function errorMessage(message) {
+    const errorMessage = document.createElement("div");
+    errorMessage.className = "errorMessage";
+    errorMessage.innerText = message;
+
+    document.body.appendChild(errorMessage);
+
+    // Set time for message to show
+    setTimeout(() => {
+        document.body.removeChild(errorMessage);
+    }, 3000);
+}
+
+
+
+
+// Validation of URL
+function isUrlValid(string) {
+    try {
+        new URL(string);
+        return true;
+    } catch (err) {
+        return false;
+    }
+}

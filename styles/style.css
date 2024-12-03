@@ -98,9 +98,12 @@ div.category {
 
 i.header-icon {
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Remove Icon style */
+/* Remove Icon - style */
 i {
     color: red;
     font-weight: bold;
@@ -111,4 +114,19 @@ i {
 i:hover {
     color: darkred;
     text-decoration: underline;
+}
+
+/* Error message */
+div.errorMessage {
+    position: absolute;
+    top: 450px;
+    left: 45%;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
