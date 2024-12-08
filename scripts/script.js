@@ -1,3 +1,4 @@
+// Fetch from HTML
 const form = document.getElementById("linkForm");
 const linkCollection = document.getElementById("linkCollection");
 
@@ -72,6 +73,7 @@ form.addEventListener("submit", (event) => {
     const url = document.getElementById("linkURL").value;
     const category = document.getElementById("categorySelect").value;
 
+    // Validation of URL
     if (!isUrlValid(url)) {
         errorMessage("Ange en giltig URL.");
         return;
@@ -99,7 +101,7 @@ function removeLink(category, link) {
     renderLinks();
 }
 
-// Function for bookmark a link
+// Function for bookmarking a link
 function toggleBookmark(link, bookmarkButton) {
     if (bookmarkedLinks.has(link)) {
         bookmarkedLinks.delete(link);

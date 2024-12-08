@@ -19,9 +19,15 @@ body {
     font-style: normal;
 }
 
-header {
+header div.header-icon-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #F5ECE1;
     padding: 50px;
+    gap: 10px;
+    font-size: 18px;
+    color: black;
 }
 
 div.box {
@@ -43,6 +49,11 @@ footer {
     bottom: 0;
     width: 100%;
     height: 4rem;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 20px;
 }
 
 h1 {
@@ -75,6 +86,7 @@ div.formContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 div#linkCollection {
@@ -97,10 +109,8 @@ div.category {
 }
 
 i.header-icon {
+    font-size: 50px;
     color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Remove Icon - style */
@@ -129,4 +139,25 @@ div.errorMessage {
     font-size: 14px;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+select, input, .submit-btn {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    /* font */
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.submit-btn {
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #98a39f;
 }
