@@ -1,18 +1,6 @@
 
-Större icon i header
-text i header
-
-text i footer
-
-större font i p?
-
-fixa till h1
 
 
-styla inputfält samt knapp
-
-
-
-
-
+Figma skiss
+https://www.figma.com/design/uNs6GC9sxZQJIragUKxQCM/case-3-js?node-id=0-1&t=xn9jEOuk8tXYNtEj-1
 
