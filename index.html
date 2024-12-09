@@ -15,42 +15,47 @@
         rel="stylesheet">
     <!-- style  -->
     <link rel="stylesheet" href="styles/style.css">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
 
-        <header>
-            <div class="header-icon-text">
-                <i class="fa-solid fa-book-open header-icon"></i>
-                <span>Recipes</span>
-            </div>
-        </header>
-
-        <h1 class="center">Your favorite recipes</h1>
-
-        <div class="box">
-            <p class="center">
-                Here you can link all your favorite recipes or recipes you want to try in the future.
-            </p>
-            <p class="center">
-                Select a category, paste the URL and click submit.
-            </p>
+    <header>
+        <div class="header-icon-text">
+            <i class="fa-solid fa-book-open header-icon"></i>
+            <span>Recipes</span>
         </div>
-        <div class="formContainer">
-            <form action="get" id="linkForm">
-                <select name="category" id="categorySelect" required>
-                    <option value="">Select a category</option>
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="dessert">Dessert</option>
-                </select>
-                <input type="text" name="linkURL" id="linkURL" placeholder="Paste URL" required>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </div>
-        
-        <div id="linkCollection"></div>
+    </header>
+
+    <h1 class="center">Your favorite recipes</h1>
+
+    <div class="box">
+        <p class="center">
+            Here you can link all your favorite recipes or recipes you want to try in the future.
+        </p>
+        <p class="center">
+            Select a category, paste the URL and click submit.
+        </p>
+    </div>
+    <div class="formContainer">
+        <form action="get" id="linkForm">
+            <select name="category" id="categorySelect" required>
+                <option value="">Select a category</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Dessert</option>
+            </select>
+            <input type="text" name="linkURL" id="linkURL" placeholder="Paste URL" required>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <div id="linkCollection"></div>
 
 
     <footer>

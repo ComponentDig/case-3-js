@@ -26,7 +26,7 @@ header div.header-icon-text {
     background-color: #F5ECE1;
     padding: 50px;
     gap: 10px;
-    font-size: 18px;
+    font-size: 30px;
     color: black;
 }
 
@@ -51,6 +51,7 @@ footer {
     height: 4rem;
 }
 
+/* Text in footer */
 h4 {
     text-align: center;
     margin-top: 20px;
@@ -129,7 +130,7 @@ i:hover {
 /* Error message */
 div.errorMessage {
     position: absolute;
-    top: 450px;
+    top: 500px;
     left: 45%;
     background-color: #f8d7da;
     color: #721c24;
