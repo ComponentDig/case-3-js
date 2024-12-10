@@ -12,59 +12,63 @@ function renderLinks() {
     linkCollection.innerHTML = "";
 
     for (const category in links) {
-        const categoryDiv = document.createElement("div");
-        categoryDiv.className = "category";
 
-        // Header for category
-        const categoryHeader = document.createElement("h3");
-        categoryHeader.textContent = category;
-        categoryDiv.appendChild(categoryHeader);
+        if (Object.hasOwn(links, category)) {
+            const categoryDiv = document.createElement("div");
+            categoryDiv.className = "category";
 
-
-
-        // List with links
-        const ul = document.createElement("ul");
-
-        links[category].forEach((link) => {
-            const li = document.createElement("li");
-
-            const a = document.createElement("a");
-            a.href = link;
-            a.textContent = link;
-            a.target = "_blank";
-            li.appendChild(a);
+            // Header for category
+            const categoryHeader = document.createElement("h3");
+            categoryHeader.textContent = category;
+            categoryDiv.appendChild(categoryHeader);
 
 
-            const bookmarkButton = document.createElement("i");
 
-            if (bookmarkedLinks.has(link)) {
-                bookmarkButton.className = "fa-solid fa-star";
-            } else {
-                bookmarkButton.className = "fa-regular fa-star";
-            }
+            // List with links
+            const ul = document.createElement("ul");
 
-            bookmarkButton.addEventListener("click", () => {
-                toggleBookmark(link, bookmarkButton);
+            links[category].forEach((link) => {
+                const li = document.createElement("li");
+
+                const a = document.createElement("a");
+                a.href = link;
+                a.textContent = link;
+                a.target = "_blank";
+                li.appendChild(a);
+
+
+                const bookmarkButton = document.createElement("i");
+
+                if (bookmarkedLinks.has(link)) {
+                    bookmarkButton.className = "fa-solid fa-star";
+                } else {
+                    bookmarkButton.className = "fa-regular fa-star";
+                }
+
+                bookmarkButton.addEventListener("click", () => {
+                    toggleBookmark(link, bookmarkButton);
+                });
+
+                li.appendChild(bookmarkButton);
+
+
+                const removeButton = document.createElement("i");
+                removeButton.className = "fa-solid fa-xmark";
+
+
+                removeButton.addEventListener("click", () => {
+                    removeLink(category, link);
+                });
+
+                li.appendChild(removeButton);
+                ul.appendChild(li);
             });
 
-            li.appendChild(bookmarkButton);
-
-
-            const removeButton = document.createElement("i");
-            removeButton.className = "fa-solid fa-xmark";
-
-
-            removeButton.addEventListener("click", () => {
-                removeLink(category, link);
-            });
-
-            li.appendChild(removeButton);
-            ul.appendChild(li);
-        });
-
-        categoryDiv.appendChild(ul);
-        linkCollection.appendChild(categoryDiv);
+            categoryDiv.appendChild(ul);
+            linkCollection.appendChild(categoryDiv);
+        }
     }
+
 }
 
 form.addEventListener("submit", (event) => {
@@ -134,8 +138,8 @@ function errorMessage(message) {
 // Validation of URL
 function isUrlValid(string) {
     try {
-        new URL(string);
-        return true;
+        const url = new URL(string);
+        return ! !url;
     } catch (err) {
         return false;
     }
